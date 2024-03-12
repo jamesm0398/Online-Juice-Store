@@ -1,0 +1,1 @@
+This is a web application built for a final exam in a web design and development course. It allows a logged-in user to order different juice types, with a generated receipt after purchase. Logged-in users can also view and delete previous orders.
