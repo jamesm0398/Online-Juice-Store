@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James' Juice Shop</title>
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+    <%- include('layouts/header_JM.ejs')  %>
+
+    <% if(typeof(loginSuccess) != 'undefined')
+    {
+        %> <h2> <%=loginSuccess%> </h2> <%
+    } %>
+
+
+    <form action="processOrder" method="post">
+        <h2>Order Juice</h2>
+        <div class="orderForm">
+            
+            <table>
+                <tr>
+                   <td><label>Name: </label></td> 
+                   <td> <input type="text" id="name" name="name"></td>
+                </tr>
+                <tr>
+                    <td><label>Phone: </label></td> 
+                    <td> <input type="text" id="phone" name="phone"></td>
+                 </tr>
+                 <tr>
+                    <td><label>Mango Juice: </label></td> 
+                    <td> <input type="text" id="mangos" name="mangos"></td>
+                 </tr>
+                 <tr>
+                    <td><label>Berry Juice: </label></td> 
+                    <td> <input type="text" id="berrys" name="berrys"></td>
+                 </tr>
+                 <tr>
+                    <td><label>Apple Juice: </label></td> 
+                    <td> <input type="text" id="apples" name="apples"></td>
+                 </tr>
+            </table>
+
+
+            <input type="submit" value="Submit" class="submitButton">
+        </div>
+
+       
+    </form>
+
+    <div class="error">
+        <% if(typeof(errors) != 'undefined')
+        {
+
+            for(var error of errors){
+            %>   
+                <p style="font-weight: bold;"><%= error.msg %></p>
+                <p>You entered: <%= error.value %></p>
+            <%
+            }
+        }
+
+        if (typeof(noneError) != 'undefined')
+        {
+          %>  <p style="font-weight: bold;"><%= noneError %></p>
+
+          <%
+        }
+
+        %>
+    </div>
+
+    <%- include('layouts/footer_JM.ejs') %>
+
+</body>
+</html>

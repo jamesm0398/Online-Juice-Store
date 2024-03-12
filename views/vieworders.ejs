@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James' Juice Shop</title>
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+    <%- include('layouts/header_JM.ejs')  %>
+
+  
+    <h2>View Orders</h2>
+
+    <table class="allOrders">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Total Mango Juices: </th>
+                <th>Total Berry Juices: </th>
+                <th>Total Apple Juices: </th>
+                <th>Subtotal: </th>
+                <th>Tax: </th>
+                <th>Total: </th>
+                <th>Manage</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            <% for(var order of orders)
+            {
+                %>
+                <tr>
+                    <td><%=order.name%></td>
+                    <td><%=order.phone%></td>
+                    <td><%=order.numMango%></td>
+                    <td><%=order.numBerrys%></td>
+                    <td><%=order.numApples%></td>
+                    <td><%=order.subTotal%></td>
+                    <td><%=order.taxAmount%></td>
+                    <td><%=order.totalCost%></td>
+                    <td><a href="/deleteOrder/<%=order._id%>">Delete</a></td>
+                </tr>
+                <%
+            }    %>
+        </tbody>
+
+    </table>
+    <%- include('layouts/footer_JM.ejs') %>
+</body>
+</html>

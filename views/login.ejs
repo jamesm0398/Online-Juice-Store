@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James' Juice Shop</title>
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+    <%- include('layouts/header_JM.ejs')  %>
+
+
+    <form action="loginUser" method="post">
+        <div class="orderForm">
+            <h2>Login</h2>
+            <div class="input">
+            <input type="text" name="username" id="username" placeholder="Enter Username">
+            </div>
+             <div class="input">
+            <input type="password" name="password" id="password" placeholder="Enter Password">
+            </div>
+            
+            <input type="submit" value="Login" class="submitButton">
+            
+        </div>
+    </form>
+
+    <div class="error">
+        <% if(typeof(loginFail) != 'undefined')
+        {
+            %> <p>Username/password incorrect</p> <%
+        } %>
+    </div>
+
+    <%- include('layouts/footer_JM.ejs') %>
+</body>
+</html>

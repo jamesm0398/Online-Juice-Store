@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James' Juice Shop</title>
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+   <%- include('layouts/header_JM.ejs')  %>  
+
+    <h2>Thanks for your order</h2>
+    <h3>Your receipt: </h3>
+
+    <table class="receipt">
+        <tr>
+            <th>Name: </th>
+            <td><%= name %></td>
+        </tr>
+
+        <tr>
+            <th>Phone: </th>
+            <td><%= phone %></td>
+        </tr>
+        <tr>
+            <th>Total Mango Juices: </th>
+            <td><%= numMango %></td>
+        </tr>
+        <tr>
+            <th>Total Berry Juices: </th>
+            <td><%= numBerrys %></td>
+        </tr>
+        <tr>
+            <th>Total Apple Juices: </th>
+            <td><%= numApples %></td>
+        </tr>
+        <tr>
+            <th>Subtotal: </th>
+            <td><%= subTotal %></td>
+        </tr>
+        <tr>
+            <th>Tax: </th>
+            <td><%= taxAmount %></td>
+        </tr>
+        <tr>
+            <th>Total: </th>
+            <td><%= totalCost %></td>
+        </tr>
+    </table>
+    <%- include('layouts/footer_JM.ejs') %>
+</body>
+</html>
